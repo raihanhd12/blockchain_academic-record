@@ -1,0 +1,1593 @@
+[
+    {
+        "type": "constructor",
+        "name": "",
+        "inputs": [],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "event",
+        "name": "MinimalPoinUpdated",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "newMinimalPoin",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "QRCodeGenerated",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "qrCodeId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "qrCodeData",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "timestamp",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "QRCodeSubmitted",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "qrCodeId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "qrCodeData",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "timestamp",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "QRCodeValidatedByBEM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "qrCodeId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "validator",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SKKMDeleted",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SKKMEdited",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "ipfsHash",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "certificateNumber",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SKKMSubmitted",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "ipfsHash",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "certificateNumber",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SKKMValidated",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "validator",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "bool",
+                "name": "isValid",
+                "indexed": false,
+                "internalType": "bool"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "SKKMVerified",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "verifier",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "bool",
+                "name": "isVerified",
+                "indexed": false,
+                "internalType": "bool"
+            },
+            {
+                "type": "string",
+                "name": "message",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "UserAdded",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "userId",
+                "indexed": false,
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "user",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "name",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "identifier",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "department",
+                "indexed": false,
+                "internalType": "string"
+            },
+            {
+                "type": "uint8",
+                "name": "role",
+                "indexed": false,
+                "internalType": "enum SKKM.Role"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "name": "UserDeleted",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "user",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "name": "triggeredBy",
+                "indexed": false,
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "anonymous": false
+    },
+    {
+        "type": "function",
+        "name": "addUser",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "user",
+                "internalType": "address"
+            },
+            {
+                "type": "uint8",
+                "name": "role",
+                "internalType": "enum SKKM.Role"
+            },
+            {
+                "type": "string",
+                "name": "name",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "identifier",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "department",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "payable"
+    },
+    {
+        "type": "function",
+        "name": "allUsers",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "userId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "userAddress",
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "name",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "identifier",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "department",
+                "internalType": "string"
+            },
+            {
+                "type": "uint8",
+                "name": "role",
+                "internalType": "enum SKKM.Role"
+            },
+            {
+                "type": "bool",
+                "name": "exists",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "deleteSKKM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "deleteUser",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "user",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "editSKKM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "string",
+                "name": "activityNameID",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityNameEN",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "newCertificateNumber",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityCategory",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityType",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "achievement",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "assessmentBasis",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "ipfsHash",
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "creditPoin",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "generateQRCode",
+        "inputs": [
+            {
+                "type": "string",
+                "name": "qrCodeData",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "getAllQRCodes",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "qrCodeId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "qrCodeData",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.QRCode[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getAllSKKM",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "skkmId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameID",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameEN",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "certificateNumber",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityCategory",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityType",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "achievement",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assessmentBasis",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ipfsHash",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "creditPoin",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "string",
+                        "name": "unverifiedMessage",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.SKKMRequest[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getAllUsers",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "userId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "userAddress",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "name",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "identifier",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "department",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "role",
+                        "internalType": "enum SKKM.Role"
+                    },
+                    {
+                        "type": "bool",
+                        "name": "exists",
+                        "internalType": "bool"
+                    }
+                ],
+                "internalType": "struct SKKM.User[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getQRCodeByStudent",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "student",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "tuple",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "qrCodeId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "qrCodeData",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.QRCode"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getQRNotValidatedByBEM",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "qrCodeId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "qrCodeData",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.QRCode[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getSKKMByQRCode",
+        "inputs": [
+            {
+                "type": "string",
+                "name": "qrCode",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "skkmId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameID",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameEN",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "certificateNumber",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityCategory",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityType",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "achievement",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assessmentBasis",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ipfsHash",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "creditPoin",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "string",
+                        "name": "unverifiedMessage",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.SKKMRequest[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getSKKMByStudent",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "student",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "skkmId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameID",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameEN",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "certificateNumber",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityCategory",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityType",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "achievement",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assessmentBasis",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ipfsHash",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "creditPoin",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "string",
+                        "name": "unverifiedMessage",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.SKKMRequest[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getSKKMNotValidatedByHMJ",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "skkmId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameID",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameEN",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "certificateNumber",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityCategory",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityType",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "achievement",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assessmentBasis",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ipfsHash",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "creditPoin",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "string",
+                        "name": "unverifiedMessage",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.SKKMRequest[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "getSKKMNotVerifiedByHMJ",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "name": "",
+                "components": [
+                    {
+                        "type": "uint256",
+                        "name": "skkmId",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "address",
+                        "name": "student",
+                        "internalType": "address"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameID",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityNameEN",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "certificateNumber",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityCategory",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "activityType",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "achievement",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "assessmentBasis",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ipfsHash",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "creditPoin",
+                        "internalType": "uint256"
+                    },
+                    {
+                        "type": "uint8",
+                        "name": "status",
+                        "internalType": "enum SKKM.Status"
+                    },
+                    {
+                        "type": "string",
+                        "name": "unverifiedMessage",
+                        "internalType": "string"
+                    },
+                    {
+                        "type": "uint256",
+                        "name": "timestamp",
+                        "internalType": "uint256"
+                    }
+                ],
+                "internalType": "struct SKKM.SKKMRequest[]"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "hasGeneratedQRCode",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "bool",
+                "name": "",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "lastQRCodeTimestamp",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "minimalPoin",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "qrcodes",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "qrCodeId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "qrCodeData",
+                "internalType": "string"
+            },
+            {
+                "type": "uint8",
+                "name": "status",
+                "internalType": "enum SKKM.Status"
+            },
+            {
+                "type": "uint256",
+                "name": "timestamp",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "requests",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "skkmId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "student",
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "activityNameID",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityNameEN",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "certificateNumber",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityCategory",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityType",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "achievement",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "assessmentBasis",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "ipfsHash",
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "creditPoin",
+                "internalType": "uint256"
+            },
+            {
+                "type": "uint8",
+                "name": "status",
+                "internalType": "enum SKKM.Status"
+            },
+            {
+                "type": "string",
+                "name": "unverifiedMessage",
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "timestamp",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "setMinimalPoin",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "_minimalPoin",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "submitQRCode",
+        "inputs": [
+            {
+                "type": "string",
+                "name": "qrCodeData",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "submitSKKM",
+        "inputs": [
+            {
+                "type": "string",
+                "name": "activityNameID",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityNameEN",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "certificateNumber",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityCategory",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityType",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "achievement",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "assessmentBasis",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "ipfsHash",
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "creditPoin",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "superAdmin",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "updateUser",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "user",
+                "internalType": "address"
+            },
+            {
+                "type": "uint8",
+                "name": "role",
+                "internalType": "enum SKKM.Role"
+            },
+            {
+                "type": "string",
+                "name": "name",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "identifier",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "department",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "users",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "userId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "address",
+                "name": "userAddress",
+                "internalType": "address"
+            },
+            {
+                "type": "string",
+                "name": "name",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "identifier",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "department",
+                "internalType": "string"
+            },
+            {
+                "type": "uint8",
+                "name": "role",
+                "internalType": "enum SKKM.Role"
+            },
+            {
+                "type": "bool",
+                "name": "exists",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "name": "validateQRCodeByBEM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "qrCodeId",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "validateSKKM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "string",
+                "name": "activityCategory",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "activityType",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "achievement",
+                "internalType": "string"
+            },
+            {
+                "type": "string",
+                "name": "assessmentBasis",
+                "internalType": "string"
+            },
+            {
+                "type": "uint256",
+                "name": "creditPoin",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "type": "function",
+        "name": "verifySKKM",
+        "inputs": [
+            {
+                "type": "uint256",
+                "name": "requestId",
+                "internalType": "uint256"
+            },
+            {
+                "type": "bool",
+                "name": "isVerified",
+                "internalType": "bool"
+            },
+            {
+                "type": "string",
+                "name": "message",
+                "internalType": "string"
+            }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    }
+]

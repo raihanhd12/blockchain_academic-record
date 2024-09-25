@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ql-editor {
+  color: black; /* Default text color */
+}
+
+.ql-color .ql-picker-options [data-value="black"]::before {
+  background-color: black !important;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.246);
+  z-index: 9999;
+}
+
+.loading-icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.rotating-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px; /* half of the rotating-circle height */
+  margin-left: -100px; /* half of the rotating-circle width */
+  border: 5px dashed transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.rotating-circle.red {
+  border-top: 5px dashed #bd51a8;
+}
+
+.rotating-circle.green {
+  border-right: 5px dashed #37c2d7;
+}
+
+.rotating-circle.blue {
+  border-bottom: 5px dashed #fee3bc;
+}
+
+.rotating-circle.yellow {
+  border-left: 5px dashed #f35c7f;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*------------------------------------------------------------------------------------ 
+-----------------------------------------Parallelogram-------------------------------
+------------------------------------------------------------------------------------- */
+
+/*============================================= Border Only========================= */
+
+.button-wallet-parallelogram {
+  border: 0 !important;
+  background: transparent !important;
+  color: white !important;
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: inline-block;
+  transform: skew(-20deg);
+}
+.button-wallet-parallelogram::before {
+  content: "";
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  border-radius: 20px !important;
+  padding: 4px !important;
+  background: linear-gradient(
+    45deg,
+    #f8cb7d,
+    #bbe6bb,
+    #8dd7ef,
+    #b38bf4,
+    #e79fbc
+  ) !important;
+  background-size: 100% 100% !important; /* Increase background size for smoother gradient */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  z-index: -1 !important;
+  transform: skew(20deg);
+}
+.button-wallet-parallelogram:hover::before {
+  background: linear-gradient(
+    120deg,
+    #f8cb7d,
+    #bbe6bb,
+    #8dd7ef,
+    #b38bf4,
+    #e79fbc
+  ) !important;
+  background-size: 100% 100% !important; /* Increase background size for smoother gradient */
+}
+
+/* ================================ End Border Only =================================== */
+
+/*============================================= Background Only========================= */
+/* .button-wallet-parallelogram {
+  border: none !important;
+  background: transparent !important;
+  color: white !important;
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: inline-block;
+  transform: skew(-20deg);
+}
+
+.button-wallet-parallelogram::before {
+  content: "";
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(90deg, #a055a5, #ae8e56) !important;
+  z-index: -1 !important;
+  transform: skew(20deg);
+}
+
+.button-wallet-parallelogram:hover::before {
+  background: linear-gradient(90deg, #facb7b, #d87cee) !important;
+} */
+
+/* ================================ End Background Only =================================== */
+/* ---------------------------------------------------------------------
+------------------------------ ---------------------End Parallelogram-------------------------
+----------------------------------------------------------------------- */
+
+/*------------------------------------------------------------------------------------ 
+-----------------------------------------Square-------------------------------
+------------------------------------------------------------------------------------- */
+
+/*============================================= Background Only========================= */
+
+/* .button-wallet-square {
+  background: transparent !important; 
+  color: white !important; 
+  border-radius: 0 !important; 
+  font-weight: bold !important; 
+  padding: 10px 20px !important; 
+  position: relative !important; 
+  z-index: 1 !important; 
+  display: inline-block; 
+}
+
+.button-wallet-square::before {
+  content: "";
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, #a055a5, #ae8e56) !important;
+  z-index: -1 !important;
+}
+
+.button-wallet-square:hover::before {
+  background: linear-gradient(90deg, #facb7b, #d87cee) !important; 
+} */
+
+/* ================================ End Background Only =================================== */
+
+/*============================================= Border Only========================= */
+.button-wallet-square {
+  background: transparent !important;
+  color: white !important;
+  border-radius: 0 !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: inline-block;
+  transition: color 0.3s ease-in-out !important; /* Smooth transition for text color */
+}
+
+.button-wallet-square::before {
+  content: "";
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  border-radius: 0 !important;
+  padding: 4px !important;
+  background: linear-gradient(
+    45deg,
+    #f8cb7d,
+    #bbe6bb,
+    #8dd7ef,
+    #b38bf4,
+    #e79fbc
+  ) !important;
+  background-size: 100% 100% !important; /* Increase background size for smoother gradient */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  z-index: -1 !important;
+  transition: background 0.3s ease-in-out !important; /* Smooth transition for background */
+}
+
+.button-wallet-square:hover {
+  color: #d87cee !important; /* Text color on hover */
+}
+
+.button-wallet-square:hover::before {
+  background: linear-gradient(
+    120deg,
+    #ffca70,
+    #7aff7a,
+    #6cdaff,
+    #a66fff,
+    #ff6ca7
+  ) !important;
+  background-size: 100% 100% !important; /* Increase background size for smoother gradient */
+}
+
+/* ================================ End Border Only =================================== */
+/* ---------------------------------------------------------------------
+ --------------------------------------End Square -----------------------
+ ------------------------------------------------------------------------ */
+
+/*------------------------------------------------------------------------------------ 
+-----------------------------------------Square Web3-------------------------------
+------------------------------------------------------------------------------------- */
+
+/*============================================= Background Only========================= */
+/* .button-wallet-square-web3 {
+  background: transparent !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 0 !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: inline-block;
+}
+
+.button-wallet-square-web3::before {
+  content: "";
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, #a055a5, #ae8e56) !important;
+  z-index: -1 !important;
+}
+
+.button-wallet-square-web3:hover::before {
+  background: linear-gradient(90deg, #facb7b, #d87cee) !important;
+} */
+
+/* ================================ End Background Only =================================== */
+
+/*============================================= Border Only========================= */
+.button-wallet-square-web3 {
+  background: transparent !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 0 !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: inline-block;
+  border: 2px solid transparent; /* Initial transparent border */
+  background-clip: padding-box; /* Background clip to ensure border is outside the padding */
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out,
+    border-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.button-wallet-square-web3::before {
+  content: "";
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  border-radius: 0 !important;
+  padding: 4px !important;
+  background: linear-gradient(
+    90deg,
+    #f8cb7d,
+    #bbe6bb,
+    #8dd7ef,
+    #b38bf4,
+    #e79fbc
+  ) !important; /* Gradient border */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  z-index: -1 !important;
+  transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+.button-wallet-square-web3:hover {
+  color: white !important; /* Text color on hover */
+  background: linear-gradient(
+    45deg,
+    #f8cb7d,
+    #bbe6bb,
+    #8dd7ef,
+    #b38bf4,
+    #e79fbc
+  ) !important;
+  background-size: 100% 100% !important; /* Increase background size for smoother gradient */ /* Background gradient on hover */
+  border-color: transparent !important; /* Remove border color on hover */
+}
+
+.button-wallet-square-web3:hover::before {
+  background: transparent !important; /* Transparent border on hover */
+}
+
+/* ================================ End Border Only =================================== */
+/* ---------------------------------------------------------------------
+ --------------------------------------End Square Web3 -----------------------
+ ------------------------------------------------------------------------ */
+@keyframes staggeredFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.accordion-content.open {
+  max-height: 1000px; /* large enough value to accommodate the content */
+  opacity: 1;
+  padding-top: 0.5rem; /* adjust as needed */
+}
+
+.indicator-container > div {
+  animation: staggeredFadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.indicator-container > div:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.indicator-container > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.indicator-container > div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.indicator-container > div:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.group:hover .indicator {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  background-color: var(--hover-color);
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.footer-transition {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.footer-transition-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.linear-gradient {
+  background: linear-gradient(
+    179.14deg,
+    rgba(32, 18, 63, 0) -7.14%,
+    #000000 87.01%
+  );
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-n-8 text-n-1 text-base;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
+}
